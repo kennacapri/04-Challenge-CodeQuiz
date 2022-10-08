@@ -1,0 +1,32 @@
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: 1px solid orange;
+
+}
+
+.first-container {
+    padding: 10px;
+}
+
+.top-screen-bar button {
+
+}
+
+body {
+    background-color: light purple;
+    font-family: monospace;
+}
+
+p {
+    color: white;
+    font-size: 1.3em;
+}
+
+button {
+    outlineL none;
+    background-color: black;
+}
