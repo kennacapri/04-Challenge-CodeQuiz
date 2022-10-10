@@ -43,30 +43,31 @@
             </footer>
         </section>
 
-        <section class="quiz-finish">
-            <h2>You Finished the Quiz!</h2>
+
+        <section class="quiz-finish" id="finished-page" class="finished-page">
+            <h2 id="you-finished">You Finished the Quiz!</h2>
             <p>Your Score: 00</p>
-            <div>
+            <div id="score" class="score">
                 <label for="">Enter initials:</label>
-                <input type="text">
-                <button>Submit</button>
+                <input type="text" placeholder="Initials Here">
+                <button class="button">Submit</button>
             </div>
         </section>
 
 
 
-        <section class="highscores">
-            <h2>High Scores:</h2>
+        <section id="highscores" class="highscores">
+            <h2 id="highscores">High Scores:</h2>
             <ol>
                 <li>KC - 20</li>
             </ol>
-            <button>Go Back</button>
-            <button>Clear High Scores</button>
+            <button id="go-back">Go back</button>
+            <button id="clear-scores" class="button">Clear High Scores</button>
         </section>
-
     </main>
        
         </div>
     </div>
+    <script src="script.js"></script>
 </body>
 </html>
