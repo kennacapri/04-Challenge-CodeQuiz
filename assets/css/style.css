@@ -78,6 +78,16 @@ h1, h2 {
 
 main {
     display: none;
-    margin: 0 auto;
-    
+}
+
+/*-- questions*/
+.questions {
+}
+
+.quiz-finish {
+    display: block;
+}
+
+.highscores {
+    display: block;
 }
