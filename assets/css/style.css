@@ -42,10 +42,10 @@ button {
     border-radius: 5px;
 }
 
-.button-grid {
+button-grid {
     margin: 20px 0;
 }
-.button:hover {
+button:hover {
     cursor: pointer;
 
 }
