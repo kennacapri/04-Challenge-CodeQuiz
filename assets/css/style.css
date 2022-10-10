@@ -38,8 +38,14 @@ button {
     font-size: 1.3em;
 }
 
+button:hover {
+    cursor: pointer;
+
+}
+
 h1, h2 {
     color: darkorange;
+    text-align: center;
 }
 .top-screen-bar p {
     float: right;
@@ -50,4 +56,27 @@ h1, h2 {
     height: 100%;
     width: 50%;
     margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.quiz-info {
+    margin-bottom: 25vh;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.quiz-info p {
+    text-align: center;
+}
+
+.quiz-info button {
+    display: block;
+    margin: 0 auto;
+}
+
+main {
+    display: none;
+    
 }
