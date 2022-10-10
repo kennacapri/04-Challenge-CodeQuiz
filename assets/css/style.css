@@ -13,6 +13,9 @@
 .first-container {
     padding: 10px;
     height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
 }
 
 /* .top-screen-bar button {
@@ -21,7 +24,6 @@
 
 body {
     background-color: lightskyblue;
-    font-family: monospace;
 }
 
 p {
@@ -34,17 +36,18 @@ button {
     background-color: black;
     color: white;
     font-size: 1.3em;
-
 }
 
+h1, h2 {
+    color: darkorange;
+}
 .top-screen-bar p {
     float: right;
 }
 
 .second-container {
-  background-color: black;
-  height: 100%;
-    
-    
-
+    background-color: black;
+    height: 100%;
+    width: 50%;
+    margin: 0 auto;
 }
