@@ -4,7 +4,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    border: 1px solid orange;
+    border: 1px solid darkorange;
 
 }
 
@@ -17,7 +17,7 @@
 }
 
 body {
-    background-color: light purple;
+    background-color: lightskyblue;
     font-family: monospace;
 }
 
@@ -29,4 +29,8 @@ p {
 button {
     outlineL none;
     background-color: black;
+}
+
+.top-screen-bar p {
+    float: right;
 }
