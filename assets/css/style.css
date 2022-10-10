@@ -61,7 +61,7 @@ h1, h2 {
     justify-content: center;
 }
 
-.quiz-info {
+.quiz-info, main {
     margin-bottom: 25vh;
     margin-left: 10%;
     margin-right: 10%;
@@ -78,5 +78,6 @@ h1, h2 {
 
 main {
     display: none;
+    margin: 0 auto;
     
 }
