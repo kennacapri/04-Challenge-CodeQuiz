@@ -111,3 +111,36 @@ startTimer();
 // }
 // }
 
+
+const quiz = new QuizCreator();
+
+
+quiz.addQuestion(
+    new Question("Commonly used data types DO Not include:")
+        .setRightAnswer("alerts")
+        .setChoices("strings", "booleans", "alerts", "numbers")
+);
+
+quiz.addQuestion(
+    new Question("The condition in an if / else statement is enclosed with _______")
+        .setRightAnswer("parenthesis")
+        .setChoices("quotes", "curly brackets", "parenthesis", "square brackets")
+);
+
+quiz.addQuestion(
+    new Question("Which operator is used to represent AND statements?")
+        .setRightAnswer("&&")
+        .setChoices("||", "+", "&")
+);
+
+quiz.addQuestion(
+    new Question("Arrays in Javascript can be used to store _______")
+        .setRightAnswer("all of the above")
+        .setChoices("numbers and strings", "other arrays", "booleans", "all of the above")
+);
+
+quiz.addQuestion(
+    new Question("Which of the following is an example of a valid variable assignment?")
+        .setRightAnswer("All Choices.")
+        .setChoices("const x = \"string\";", "let y = 10;", "var z = [];")
+);
