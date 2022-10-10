@@ -2,7 +2,6 @@
 (function() {
     var sec = 75;
     function startTimer(){
-    console.log("timer counts down")
     var timer = setInterval(function(){
      sec--;   
     document.getElementById("secs").innerHTML="00:"+sec;
@@ -33,3 +32,29 @@ startTimer();
 //     HTMLVideoElement($currentWindow);
 
 // }
+
+function resetState() {
+    nextButton.classList.add("hide")
+    while (answerButtonElement.firstChild) {
+        answerButtonElement.removeChild
+        (answerButtonElement.firstChild)
+    }
+}
+
+function selectAnswer(e) {
+    const selectedButton = e.target
+    const correct = selectButton.dataset.correct
+    setStatusClass(document.body, correct)
+    Array.from(answerButtonElement.children).forEach(button => {
+        setStatusClass(button, button.dataset.correct)
+    })
+}
+
+function setStatusClass(element, correct) {
+    clearStatusClass(element)
+    if (correct) {
+        element.classList.add("correct")
+    } else {
+    element.classList.add("wrong")
+}
+}
