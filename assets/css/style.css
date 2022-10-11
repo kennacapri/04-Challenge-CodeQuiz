@@ -147,3 +147,11 @@ main {
     flex-direction: column;
     justify-content: center;
 }
+
+.correct {
+    background-color: green;
+
+}
+.incorrect {
+    background-color: red;
+}

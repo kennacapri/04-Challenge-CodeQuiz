@@ -15,69 +15,43 @@
         <!-- top of screen bar-->
         <div class="top-screen-bar">
             <button class="button" onclick="location.href='highscores.html'">View High Scores</button>
-            <p>Timer:75</p>
+            <div class ="hud-main-text" id="time">75</div>
+            <div>Time:</div>
+            <div class ="hud-main-text" id="score">0</div>
+            <div>Score:</div>
         </div>
     
         
             <!--quiz info-->
-        <div class="questions">
+        <header class="questions">
             <div id="game" class="justify-center flex-column">
             <h1 id="question">Commonly used data types DO Not include:</h1>
             <div class="choice-container">
-                <p class="choice-prefix"></p>
-                <p class="choice-text" data-number="1">1. strings</p>
+                <button class="choice-text" data-number="1">1. strings</button>
             </div>
             <div class="choice-container">
-                <p class="choice-prefix"></p>
-                <p class="choice-text" data-number="2">2. booleans</p>
-            </div> 
+                <button class="choice-text" data-number="2">2. strings</button>
+            </div>
             <div class="choice-container">
-                <p class="choice-prefix"></p>
-                <p class="choice-text" data-number="3">3. alerts</p>
-            </div> 
+                <button class="choice-text" data-number="3">3. strings</button>
+            </div>
             <div class="choice-container">
-                <p class="choice-prefix"></p>
-                <p class="choice-text" data-number="4">4. numbers</p>
-            </div> 
-              
-            
+                <button class="choice-text" data-number="4">4. strings</button>
             </div>
         </div>
+        </header>
+
+        
 
         <!--quiz questions-->
-    <main> 
+    <!-- <main> 
         <div id="timerDisplay">
             <button id="incorrect">Simulate Incorrect Answer</button>
         </div>
-        <!-- <section class="questions">
-            <h2>Questions</h2>
-            
-        </section> -->
-
-        <section class="quiz-finish">
-            <h2>You Finished the Quiz!</h2>
-            <p>Your Score: 00</p>
-            <div>
-                <label for="">Enter initials:</label>
-                <input type="text">
-                <button>Submit</button>
-            </div>
-        </section>
-
-
-
-        <section class="highscores">
-            <h2>High Scores:</h2>
-            <ol>
-                <li>KC - 20</li>
-            </ol>
-            <button>Go Back</button>
-            <button>Clear High Scores</button>
-        </section>
-
-    </main>
+    </main> -->
        
-        </div>
+        </header>
     </div>
+    <script src="script.js"></script>
 </body>
 </html>

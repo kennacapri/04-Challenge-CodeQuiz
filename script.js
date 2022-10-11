@@ -1,16 +1,12 @@
 const question = document.getElementById("question");
 const choices = Array.from(document.getElementsByClassName("choice-text"));
+const scoreText = document.getElementById("score");
 
-// const choices = Array.from(document.querySelectorAll(".choice-text"));
-// const progressText = document.querySelector("#progressText");
-// const scoreText = document.querySelector("#score");
-// const progressBarFull = document.querySelector("#progressBarFull");
-
-let currentQuestion = {}
-let acceptingAnswers = true
-let score = 0
-let questionCounter = 0
-let availableQuestions = []
+let currentQuestion = {};
+let acceptingAnswers = false;
+let score = 0;
+let questionCounter = 0;
+let availableQuestions = [];
 
 let questions = [
     {
@@ -19,7 +15,7 @@ let questions = [
         choice2: "booleans",
         choice3: "alerts",
         choice4: "numbers",
-        answer: "alerts"
+        answer: 3
     
     },
     {
@@ -28,7 +24,7 @@ let questions = [
         choice2: "parenthesis",
         choice3: "quotes",
         choice4: "square brackets",
-        answer: "parenthesis"
+        answer: 2
     
     },
     {
@@ -37,7 +33,7 @@ let questions = [
         choice2: "+",
         choice3: "$",
         choice4: "&&",
-        answer: "&&"
+        answer: 4
     
 
     },
@@ -47,7 +43,7 @@ let questions = [
         choice2: "other arrays",
         choice3: "booleans",
         choice4: "all of the above",
-        answer: "all of the above"
+        answer: 4
     
     
     },
@@ -57,11 +53,15 @@ let questions = [
         choice2: "Cascading Style Sheets",
         choice3: "Cascading Simple Sheets",
         choice4: "Cars SUVs Sailboats", 
-        answer: "Cascading Style Sheets"
-   
-    },
+        answer: 2
+    }
+    ];
 
-    startGame = () +> {
+    //CONSTANTS
+    const CORRECT_BONUS = 10;
+    const MAX_QUESTIONS = 5;
+
+    startGame = () => {
         questionCounter = 0;
         score = 0;
         availableQuestions = [...questions];
@@ -69,8 +69,12 @@ let questions = [
     };
 
 
-    getQuestion = () => {
-
+    getNewQuestion = () => {
+        if(availableQuestions.length === 0 || questionCounter >= MAX_QUESTIONS) {
+            localStorage.setItem("mostRecentScore", score);
+            return window.location.assign("highscores.html");
+        }
+        
         questionCounter++;
         const questionIndex = Math.floor(Math.random() * availableQuestions.length);
         currentQuestion = availableQuestions[questionIndex];
@@ -79,12 +83,44 @@ let questions = [
         choices.forEach( choice => {
             const number = choice.dataset["number"];
             choice.innerText = currentQuestion["choice" + number];
-        })
+        });
+
+        availableQuestions.splice(questionIndex, 1);
+        acceptingAnswers = true;
     };
 
 
+    choices.forEach(choice => {
+        choice.addEventListener("click", e => {
+            if(!acceptingAnswers) return;
+            
+            acceptingAnswers = false;
+            const selectedChoice = e.target;
+            const selectedAnswer = selectedChoice.dataset["number"];
 
-    startGame();
+            const classToApply = selectedAnswer == currentQuestion.answer ? "correct" : "incorrect";
+
+            if (classToApply === "correct") {
+                incrementScore(CORRECT_BONUS);
+            }
+
+            selectedChoice.parentElement.classList.add(classToApply);
+            setTimeout( () => {
+                selectedChoice.parentElement.classList.remove(classToApply); 
+                getNewQuestion();
+
+            }, 1000);
+           
+        });
+    });
+
+incrementScore = num => {
+    score += num;
+    scoreText.innerText = score;     
+}
+
+startGame()
+
 
 // (function() {
 //     var sec = 75;
@@ -121,32 +157,3 @@ let questions = [
 // }
 
 
-function setTime() {
-        var timeInterval = setInterval(function () {
-        timer--;
-        timeText.textContent = timer;
-     
-      if (timer === 0) {
-        clearInterval(timerInterval);
-
-        localStorage.setItem("mostRecentScore", score);
-        return window.location.assign("/end.html")
-      }
-
-    }, 1000);
-
-    choices.forEach(choice => {
-        choice.addEventListener("click", e => {
-            if(!acceptingAnswers) return
-
-            acceptingAnswers = false
-            const selectedChoice = e.target
-            const selectedAnswer = selectedChoice.dataset["number"]
-
-            let classToApply = selectedAnswer == currentQuestion.answer ? "correct"
-
-            if (classToApply === ("correct")) {
-                incrementScore(Score_Points)
-            } else }
-            | timer -= 10
-            }
