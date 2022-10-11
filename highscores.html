@@ -9,31 +9,39 @@
 </head>
 
 <body>
-    <div class="third-container">
-        <div id="end" class="flex-center fkex-column">
-
-        <div class="container">
-            <button class="button" onclick="location.href='index.html'">Home</button>
-            <h1 id="finalscore">High Scores</h1>
-            <form>
-            <input 
-                type="text"
-                name="initials"
-                id="initials"
-                placeholder="initials"
-                />
-                <button
-                type="submit"
-                class="btn"
-                id="savescore"
-                onclick="savehighscore(event)"
-                >
-                Save
-            </button>
-            </form>
-        </div>
-        </div>
+    <div class="outside">
+      <br>
+      <h1>Save Your High Score</h1>
+      <div class="quiz-container"> 
+        <header class="quiz-start">
+          
+          <div id="end">
+            <h2 id="finalScore"></h2>
+          <br>
+          <form>
+            <input
+          type="text" 
+          name="username" 
+          id="username" 
+          placeholder="username"/></form>
+          <br>
+          </div>
+          <button 
+          type="submit" 
+          id="saveScore" 
+          onclick="saveHighScore(event)" 
+          >
+          Save
+        </button>
+  
+        </header>
+        <main>
+         
+        </main>
+      </div>
+  
+  
     </div>
     <script src="highscores.js"></script>
-</body>
-</html>
+  </body>
+  </html>
