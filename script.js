@@ -1,146 +1,144 @@
+const question = document.querySelector("#question");
+const choices = Array.from(document.querySelectorAll(".choice-text"));
+const progressText = document.querySelector("#progressText");
+const scoreText = document.querySelector("#score");
+const progressBarFull = document.querySelector("#progressBarFull");
 
-(function() {
-    var sec = 75;
-    function startTimer(){
-    var timer = setInterval(function(){
-     sec--;   
-    document.getElementById("secs").innerHTML="00:"+sec;
-    if (sec < 0) {
-    clearInterval(timer);
-    alert("Time is up")
-        }
-    }, 1000);
-}
-document.getElementById("incorrect").addEventListener("click", function() {
-    sec -= 5;
-    document.getElementById("timerDisplay").innerHTML="00:"+sec;
-});
-startTimer();
-})();
+let currentQuestion = {}
+let acceptingAnswers = true
+let score = 0
+let questionCounter = 0
+let availableQuestions = []
+
+let questions = [
+    {
+        question: "Commonly used data types DO Not include:",
+        potentialAnswers: [
+        "strings"
+        "booleans"
+        "alerts"
+        "numbers"
+    ],
+    answer: "alerts"
+    }
+    {
+        question: "The condition in an if / else statement is enclosed with _______",
+        potentialAnswers: [
+        "curly brackets"
+        "parenthesis"
+        "quotes"
+        "square brackets"
+    ],
+    answer: "parenthesis"
+    }
+    {
+        question: "Which operator is used to represent AND statements?",
+        potentialAnswers: [
+        "||"
+        "+"
+        "$"
+        "&&"
+    ],
+    answer: "&&"
+
+    }
+    {
+        question: "Arrays in Javascript can be used to store _______",
+        potentialAnswers: [
+        "numbers and strings"
+        "other arrays"
+        "booleans"
+        "all of the above"
+    ],
+    answer: "alerts"
+    
+    }
+    {
+        question: "What does CSS stand for",
+        potentialAnswers: [
+        "Central Style Sheets"
+        "Cascading Style Sheets"
+        "Cascading Simple Sheets"
+        "Cars SUVs Sailboats"
+    ],
+    answer: "Cascading Style Sheets"
+    }
+
+        if()
+        else()
 
 
-// var now = new Date().getTime();
-// var timeleft = countDownDate - now;
-
-// var seconds = Math.floor((timeleft % (1000 * 60)) / 1000);
-
-
-
-
-// function switchScreen ($newScreen) {
-//     if ($newScreen === $currentWindow) return;
-//     HTMLVideoElement($currentWindow);
-
-// }
-
-
-// const startButton = document.getElementById("start-btn")
-// const questionContainerElement = document.getElementById
-// ("question-container")
-// const questionElement = document.getElementById("question")
-// const answerButtonsElement = document.getElementById("answer-buttons")
-
-// startButton.addEventListener("click", startGame)
-
-
-// function startGame() {
-// startButton.classList.add("hide")
-// currentQuestionIndex = 0
-// questionContainerElement.classList.remove("hide")
-// setNextQuestion()
-// }
-
-// function setNextQuestion() {
-//     resetState()
-// }
-
-// function showQuestion(question) {
-//     questionElement.innertext = question.question
-//     question.answers.forEach(answer => {
-//         const button = document.createElement("button")
-//         button.innerText = answer.text
-//         button.classList.add("btn")
-//         if (answer.correct) {
-//             button.dataset.correct = answer.correct
+// (function() {
+//     var sec = 75;
+//     function startTimer(){
+//     var timer = setInterval(function(){
+//      sec--;   
+//     document.getElementById("secs").innerHTML="00:"+sec;
+//     if (sec < 0) {
+//     clearInterval(timer);
+//     alert("Time is up")
 //         }
-//         button.addEventListener("click", selectAnswer)
-//         answerButtonsElement.appendChild(button)
-//     })
+//     }, 1000);
 // }
+// document.getElementById("incorrect").addEventListener("click", function() {
+//     sec -= 5;
+//     document.getElementById("timerDisplay").innerHTML="00:"+sec;
+// });
+// startTimer();
+// })();
 
-// function resetState() {
-//     clearStatusClass(document.body)
-//     nextButton.classList.add("hide")
-//     while (answerButtonsElement.firstChild) {
-//         answerButtonsElement.removeChild(answerButtonsElement.firstChild)
-//     }
-// }
-
-// function selectAnswer() {
-
-
-
-// }
-// const questions = [
-//     {
-//         question: "",
-//         answers: [
-//             {text: "", correct: true },
-//             {text: "", correct: false }
-//         ]
-//     }
-// ]
+// function updateQuizTimer(time) {
+//     if ($newScreen === $currentWindow) return;
+//     showElement($currentWindow);
+//     $prevWindow = $currentWindow;
+//     showElement($newScreen);
+//     $currentWindow = $newScreen;
 
 
-
-// function selectAnswer(e) {
-//     const selectedButton = e.target
-//     const correct = selectButton.dataset.correct
-//     setStatusClass(document.body, correct)
-//     Array.from(answerButtonElement.children).forEach(button => {
-//         setStatusClass(button, button.dataset.correct)
-//     })
-// }
-
-// function setStatusClass(element, correct) {
-//     clearStatusClass(element)
-//     if (correct) {
-//         element.classList.add("correct")
-//     } else {
-//     element.classList.add("wrong")
+// if (quiz.$currentQuestionIndex > 0) {
+//     showElement($main);
+//  } else {
+//     hideElement($main, true);
 // }
 // }
 
 
-const quiz = new QuizCreator();
+function countdown() {
+        var timeInterval = setInterval(function () {
+        timer--;
+        timeText.textContent = timer;
+     
+      if (timer === 0) {
+        clearInterval(timerInterval);
+
+        localStorage.setItem("mostRecentScore", score);
+
+        return window.location.assign("/end.html")
+      }
+
+    }, 1000);
+
+    choices.forEach(choice => {
+        choice.addEventListener("click", e => {
+            if(!acceptingAnswers) return
+
+            acceptingAnswers = false
+            const selectedChoice = e.target
+            const selectedAnswer = selectedChoice.dataset["number"]
+
+            let classToApply = selectedAnswer == currentQuestion.answer ? "correct"
+
+            if (classToApply === ("correct")) {
+                incrementScore(Score_Points)
+            } else }
+            | timer -= 10
+            }
+        
 
 
-quiz.addQuestion(
-    new Question("Commonly used data types DO Not include:")
-        .setRightAnswer("alerts")
-        .setChoices("strings", "booleans", "alerts", "numbers")
-);
 
-quiz.addQuestion(
-    new Question("The condition in an if / else statement is enclosed with _______")
-        .setRightAnswer("parenthesis")
-        .setChoices("quotes", "curly brackets", "parenthesis", "square brackets")
-);
 
-quiz.addQuestion(
-    new Question("Which operator is used to represent AND statements?")
-        .setRightAnswer("&&")
-        .setChoices("||", "+", "&")
-);
 
-quiz.addQuestion(
-    new Question("Arrays in Javascript can be used to store _______")
-        .setRightAnswer("all of the above")
-        .setChoices("numbers and strings", "other arrays", "booleans", "all of the above")
-);
 
-quiz.addQuestion(
-    new Question("Which of the following is an example of a valid variable assignment?")
-        .setRightAnswer("All Choices.")
-        .setChoices("const x = \"string\";", "let y = 10;", "var z = [];")
-);
+
+
