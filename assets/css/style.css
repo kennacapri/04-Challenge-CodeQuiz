@@ -131,7 +131,6 @@ main {
 
 .choice-text {
     outline: none;
-    background-color: black;
     color: white;
     font-size: 1.3em;
     padding: 5px 10px;
@@ -146,6 +145,10 @@ main {
     display: block;
 }
 
+.quiz-start button {
+    display: block;
+    margin: 0 auto;
+}
 
 .questions-container {
     /* background-color: black; */
