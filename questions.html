@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Code Quiz</title>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./assets/css/style.css">
+    <title>Code Quiz</title>
 </head>
 
 <body>
@@ -17,26 +17,32 @@
             <button class="button" onclick="location.href='highscores.html'">View High Scores</button>
             <p>Timer:75</p>
         </div>
-
-        <!--inner container div area-->
-        <div class="questions-container">
-            <div id="coding-questions-container" class="hide">
-            <div class="controls">
-
-            </div>
-            </div>
+    
+        
             <!--quiz info-->
-        <header class="questions">
-            <h1>Commonly used data types DO Not include:</h1>
-            <ul>
-                <li><button>1. strings</button></li>
-                <li><button>2. booleans</button></li>
-                <li><button>3. alerts</button></li>
-                <li><button>4. numbers</button></li>
-            </ul>
-           
+        <div class="questions">
+            <div id="game" class="justify-center flex-column">
+            <h1 id="question">Commonly used data types DO Not include:</h1>
+            <div class="choice-container">
+                <p class="choice-prefix"></p>
+                <p class="choice-text">1. strings</p>
+            </div>
+            <div class="choice-container">
+                <p class="choice-prefix"></p>
+                <p class="choice-text">2. booleans</p>
+            </div> 
+            <div class="choice-container">
+                <p class="choice-prefix"></p>
+                <p class="choice-text">3. alerts</p>
+            </div> 
+            <div class="choice-container">
+                <p class="choice-prefix"></p>
+                <p class="choice-text">4. numbers</p>
+            </div> 
+              
             
-        </header>
+            </div>
+        </div>
 
         <!--quiz questions-->
     <main> 

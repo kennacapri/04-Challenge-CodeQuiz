@@ -104,6 +104,25 @@ main {
     list-style: none;
 }
 
+.choice-container{
+    outline: none;
+    background-color: black;
+    color: white;
+    font-size: 1.3em;
+    padding: 5px 10px;
+    border-radius: 5px;
+    width: 25%;
+}
+
+.choice-text {
+    outline: none;
+    background-color: black;
+    color: white;
+    font-size: 1.3em;
+    padding: 5px 10px;
+    border: 1px solid;
+    border-radius: 5px;
+}
 .quiz-finish {
     display: block;
 }

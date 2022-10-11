@@ -103,7 +103,7 @@ let questions = [
 // }
 
 
-function countdown() {
+function setTime() {
         var timeInterval = setInterval(function () {
         timer--;
         timeText.textContent = timer;
@@ -112,7 +112,6 @@ function countdown() {
         clearInterval(timerInterval);
 
         localStorage.setItem("mostRecentScore", score);
-
         return window.location.assign("/end.html")
       }
 
@@ -133,12 +132,3 @@ function countdown() {
             } else }
             | timer -= 10
             }
-        
-
-
-
-
-
-
-
-
