@@ -112,6 +112,12 @@ main {
     padding: 5px 10px;
     border-radius: 5px;
     width: 25%;
+    
+}
+.choice-container:hover {
+    cursor: pointer;
+    transition: transform 150ms;
+    transform: translateY(-0.1rem);
 }
 
 .choice-text {

@@ -1,8 +1,10 @@
-const question = document.querySelector("#question");
-const choices = Array.from(document.querySelectorAll(".choice-text"));
-const progressText = document.querySelector("#progressText");
-const scoreText = document.querySelector("#score");
-const progressBarFull = document.querySelector("#progressBarFull");
+const question = document.getElementById("question");
+const choices = Array.from(document.getElementsByClassName("choice-text"));
+
+// const choices = Array.from(document.querySelectorAll(".choice-text"));
+// const progressText = document.querySelector("#progressText");
+// const scoreText = document.querySelector("#score");
+// const progressBarFull = document.querySelector("#progressBarFull");
 
 let currentQuestion = {}
 let acceptingAnswers = true
@@ -13,60 +15,76 @@ let availableQuestions = []
 let questions = [
     {
         question: "Commonly used data types DO Not include:",
-        potentialAnswers: [
-        "strings"
-        "booleans"
-        "alerts"
-        "numbers"
-    ],
-    answer: "alerts"
-    }
+        choice1: "strings",
+        choice2: "booleans",
+        choice3: "alerts",
+        choice4: "numbers",
+        answer: "alerts"
+    
+    },
     {
         question: "The condition in an if / else statement is enclosed with _______",
-        potentialAnswers: [
-        "curly brackets"
-        "parenthesis"
-        "quotes"
-        "square brackets"
-    ],
-    answer: "parenthesis"
-    }
+        choice1: "curly brackets",
+        choice2: "parenthesis",
+        choice3: "quotes",
+        choice4: "square brackets",
+        answer: "parenthesis"
+    
+    },
     {
         question: "Which operator is used to represent AND statements?",
-        potentialAnswers: [
-        "||"
-        "+"
-        "$"
-        "&&"
-    ],
-    answer: "&&"
+        choice1: "||",
+        choice2: "+",
+        choice3: "$",
+        choice4: "&&",
+        answer: "&&"
+    
 
-    }
+    },
     {
         question: "Arrays in Javascript can be used to store _______",
-        potentialAnswers: [
-        "numbers and strings"
-        "other arrays"
-        "booleans"
-        "all of the above"
-    ],
-    answer: "alerts"
+        choice1: "numbers and strings",
+        choice2: "other arrays",
+        choice3: "booleans",
+        choice4: "all of the above",
+        answer: "all of the above"
     
-    }
+    
+    },
     {
         question: "What does CSS stand for",
-        potentialAnswers: [
-        "Central Style Sheets"
-        "Cascading Style Sheets"
-        "Cascading Simple Sheets"
-        "Cars SUVs Sailboats"
-    ],
-    answer: "Cascading Style Sheets"
-    }
+        choice1: "Central Style Sheets",
+        choice2: "Cascading Style Sheets",
+        choice3: "Cascading Simple Sheets",
+        choice4: "Cars SUVs Sailboats", 
+        answer: "Cascading Style Sheets"
+   
+    },
 
-        if()
-        else()
+    startGame = () +> {
+        questionCounter = 0;
+        score = 0;
+        availableQuestions = [...questions];
+        getNewQuestion();
+    };
 
+
+    getQuestion = () => {
+
+        questionCounter++;
+        const questionIndex = Math.floor(Math.random() * availableQuestions.length);
+        currentQuestion = availableQuestions[questionIndex];
+        question.innerText = currentQuestion.question;
+
+        choices.forEach( choice => {
+            const number = choice.dataset["number"];
+            choice.innerText = currentQuestion["choice" + number];
+        })
+    };
+
+
+
+    startGame();
 
 // (function() {
 //     var sec = 75;
