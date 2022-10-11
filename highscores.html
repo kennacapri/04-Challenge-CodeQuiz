@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Code Quiz</title>
+    <title>You Finished</title>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,61 +9,31 @@
 </head>
 
 <body>
-    <!--outer box-->
-    <div class="first-container">
+    <div class="third-container">
+        <div id="end" class="flex-center fkex-column">
 
-        <!-- top of screen bar-->
-        <div class="top-screen-bar">
-            <button class="button" onclick="location.href='highscores.html'">View High Scores</button>
-            <p>Timer:00:00</p>
+        <div class="container">
+            <button class="button" onclick="location.href='index.html'">Home</button>
+            <h1 id="finalscore">High Scores</h1>
+            <form>
+            <input 
+                type="text"
+                name="initials"
+                id="initials"
+                placeholder="initials"
+                />
+                <button
+                type="submit"
+                class="btn"
+                id="savescore"
+                onclick="savehighscore(event)"
+                >
+                Clear High Scores
+            </button>
+            </form>
         </div>
-
-        <!--inner container div area-->
-        <div class="second-container">
-
-            <!--quiz info-->
-        <header class="quiz-info">
-            <h1>Welcome to the Quiz</h1>
-            <p>click below to start quiz</p>
-            <button class="button" onclick="location.href='questions.html'">Start Quiz</button>
-        </header>
-
-        <!--quiz questions-->
-    <main>
-        <section class="questions">
-            <h2>Questions</h2>
-            <ul>
-                <li><button>Answer 1</button></li>
-                <li><button>Answer 2</button></li>
-                <li><button>Answer 3</button></li>
-                <li><button>Answer 4</button></li>
-            </ul>
-        </section>
-
-        <section class="quiz-finish">
-            <h2>You Finished the Quiz!</h2>
-            <p>Your Score: 00</p>
-            <div>
-                <label for="">Enter initials:</label>
-                <input type="text">
-                <button>Submit</button>
-            </div>
-        </section>
-
-
-
-        <section class="highscores">
-            <h2>High Scores:</h2>
-            <ol>
-                <li>KC - 20</li>
-            </ol>
-            <button>Go Back</button>
-            <button>Clear High Scores</button>
-        </section>
-
-    </main>
-       
         </div>
     </div>
+    <script src="script.js"></script>
 </body>
 </html>
