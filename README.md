@@ -1,16 +1,10 @@
 # 04-Challenge-CodeQuiz
 
 ## Description
-This website is a password generator. The password must be between 8-128 characters long. You have to choose at least one lowercase letter, one uppercase letter, one number or one symbol. 
-
-## Installation
-N/A
+This website generates a coding quiz. Once you start there's a timer countdown and you have to answer the several questions. Once finished it will take you to a high scores screen where you can enter in your initials to keep track of your scores.
 
 ## Usage
-This website is for users to generate a password. The password generator will prompt you with choosing a length of password between 8-128 characters. The password generator will prompt you with a lowercase letter option, uppercase letter option, number and symbol to add to your password. you must choose "ok" or "cancel" when making your choice. After going through the prompts it will generate a password with the criteria you selected.  
-
-## Credits
-N/A
+This website is for anyone wanting to take a quick coding quiz. Click the start button and you will be redirected to a new page with a question and the timer will start counting down. If you click the correct answer it will highlight green and your score will increase and it will move onto the next question. If you click the wrong answer it will highlight red and move onto the next question. Once you finish the quiz, you will have the option to put in your initials under high scores so you can keep track of your different scores from the quiz. You can click "home" and it will take you back to the landing page to start the quiz again. 
 
 ## License
 See LICENSE in the repo.
